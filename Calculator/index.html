@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/Calculator.webp">
+    <title>Calculator</title>
+    <style>
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        section{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        
+        html{
+            background: url(/img/bg.jpg) 100%;
+            
+        }
+        
+        .container{
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+            margin-top: 20vh;
+        
+            background-color: rgba(223, 196, 145, 0.53);
+            width: 50vh;
+            height: 60vh;
+            border-radius: 10%;
+            align-items: center;
+            box-shadow:  0 0 2rem rgb(0, 0, 0);
+            
+        }
+        
+        h1{
+            color: white;
+            
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+        }
+        .inp{
+            width: 12rem;
+            height: 1.8rem;
+            border-radius: 10px;
+            border: none;
+
+            
+        }
+
+        .btn{
+           background-color: rgb(255, 255, 255);
+           color: rgb(39, 37, 37);
+           border: none;
+           width: 50px;
+           height: 30px;
+           border-radius: 20px;
+           
+            
+        }
+        
+        .btn:hover{
+            background-color:rgba(223, 196, 145, 0.53);
+            color: rgb(255, 255, 255);
+            box-shadow: 0 0 0.5rem rgb(0, 0, 0);
+        }
+        @media (max-width: 375px){
+            .container{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body >
+    <section>
+        <div class="container" >
+            <div class="c">
+                <div class="title">
+                    <h1>Calculator</h1>
+        
+                </div>
+                <table cellpadding="13px" align="center" >
+                    <tr>
+                        <td colspan="3"><input class="inp" type="text" id="result"></td>
+                        <td ><input class="btn" type="button" value="c" onclick="clr()"></td >
+                    </tr>
+                    <tr >
+                        <td ><input class="btn" type="button" value="1" onclick="display('1')"></td >
+                        <td ><input class="btn" type="button" value="2" onclick="display('2')"></td >
+                        <td ><input class="btn" type="button" value="3" onclick="display('3')"></td >
+                        <td ><input class="btn" type="button" value="/" onclick="display('/')"></td >
+                    </tr>
+                    <tr>
+                        <td ><input class="btn" type="button" value="4" onclick="display('4')"></td >
+                        <td ><input class="btn" type="button" value="5" onclick="display('5')"></td >
+                        <td ><input class="btn" type="button" value="6" onclick="display('6')"></td >
+                        <td ><input class="btn" type="button" value="-" onclick="display('-')"></td>
+                    </tr>
+                    <tr>
+                        <td ><input class="btn" type="button" value="7" onclick="display('7')"></td >
+                        <td ><input class="btn" type="button" value="8" onclick="display('8')"></td>
+                        <td ><input class="btn" type="button" value="9" onclick="display('9')"></td >
+                        <td ><input class="btn" type="button" value="+" onclick="display('+')"></td>
+                    </tr>
+                    <tr>
+                        <td ><input class="btn" type="button" value="." onclick="display('.')"></td >
+                        <td ><input class="btn" type="button" value="0" onclick="display('0')"></td >
+                        <td ><input class="btn" type="button" value="=" onclick="equate()"></td >
+                        <td ><input class="btn" type="button" value="*" onclick="display('*')"></td>
+                    </tr>
+        
+                </table>
+            </div>
+        </div>
+    </section>
+    <script>
+        function clr(){
+            document.getElementById("result").value="";
+        }
+         function display(val){
+            document.getElementById("result").value+=val;
+        }
+         function equate(){
+            let x= document.getElementById("result").value;
+            let y=eval(x);
+            document.getElementById("result").value=y;
+        }
+        
+    </script>
+</body>
+</html>
